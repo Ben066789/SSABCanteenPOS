@@ -43,3 +43,5 @@ C:\Users\User\source\repos\SSA-B Canteen\obj\Debug\net8.0-windows\SSA-B Canteen.
 C:\Users\User\source\repos\SSA-B Canteen\obj\Debug\net8.0-windows\SSA-B Ca.9A8D5680.Up2Date
 C:\Users\User\source\repos\SSA-B Canteen\obj\Debug\net8.0-windows\SSA_B_Canteen.AddProduct.resources
 C:\Users\User\source\repos\SSA-B Canteen\bin\Debug\net8.0-windows\zxing.dll
+C:\Users\User\source\repos\SSA-B Canteen\obj\Debug\net8.0-windows\SSA-B Canteen.sourcelink.json
+C:\Users\User\source\repos\SSA-B Canteen\obj\Debug\net8.0-windows\SSA_B_Canteen.Cashier.resources

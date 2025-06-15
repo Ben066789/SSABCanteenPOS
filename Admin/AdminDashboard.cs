@@ -25,5 +25,10 @@ namespace SSA_B_Canteen
             addProductForm.ShowDialog(this);
         }
 
+        private void btnCashier_Click(object sender, EventArgs e)
+        {
+            var cashierForm = new SSA_B_Canteen.Cashier();
+            cashierForm.Show(); // Use ShowDialog() if you want it modal
+        }
     }
 }

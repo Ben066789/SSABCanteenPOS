@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             txtBoxQuantity = new CustomControls.RJControls.RJTextBox();
             barcode = new Label();
             txtBoxName = new CustomControls.RJControls.RJTextBox();

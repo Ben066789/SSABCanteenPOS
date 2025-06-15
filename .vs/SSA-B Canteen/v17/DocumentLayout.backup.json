@@ -3,16 +3,28 @@
   "WorkspaceRootPath": "C:\\Users\\User\\source\\repos\\SSA-B Canteen\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{164A4824-D519-4A03-93B6-DC635AD44E5C}|SSA-B Canteen.csproj|c:\\users\\user\\source\\repos\\ssa-b canteen\\admin\\addproduct.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{164A4824-D519-4A03-93B6-DC635AD44E5C}|SSA-B Canteen.csproj|solutionrelative:admin\\addproduct.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{164A4824-D519-4A03-93B6-DC635AD44E5C}|SSA-B Canteen.csproj|c:\\users\\user\\source\\repos\\ssa-b canteen\\cashier\\cashier.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{164A4824-D519-4A03-93B6-DC635AD44E5C}|SSA-B Canteen.csproj|solutionrelative:cashier\\cashier.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{164A4824-D519-4A03-93B6-DC635AD44E5C}|SSA-B Canteen.csproj|C:\\Users\\User\\source\\repos\\SSA-B Canteen\\admin\\addproduct.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{164A4824-D519-4A03-93B6-DC635AD44E5C}|SSA-B Canteen.csproj|solutionrelative:admin\\addproduct.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{164A4824-D519-4A03-93B6-DC635AD44E5C}|SSA-B Canteen.csproj|c:\\users\\user\\source\\repos\\ssa-b canteen\\cashier\\cashier.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{164A4824-D519-4A03-93B6-DC635AD44E5C}|SSA-B Canteen.csproj|solutionrelative:cashier\\cashier.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{164A4824-D519-4A03-93B6-DC635AD44E5C}|SSA-B Canteen.csproj|c:\\users\\user\\source\\repos\\ssa-b canteen\\admin\\addproduct.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{164A4824-D519-4A03-93B6-DC635AD44E5C}|SSA-B Canteen.csproj|solutionrelative:admin\\addproduct.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{164A4824-D519-4A03-93B6-DC635AD44E5C}|SSA-B Canteen.csproj|c:\\users\\user\\source\\repos\\ssa-b canteen\\cashier\\cashier.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{164A4824-D519-4A03-93B6-DC635AD44E5C}|SSA-B Canteen.csproj|solutionrelative:cashier\\cashier.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{164A4824-D519-4A03-93B6-DC635AD44E5C}|SSA-B Canteen.csproj|c:\\users\\user\\source\\repos\\ssa-b canteen\\admin\\admindashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{164A4824-D519-4A03-93B6-DC635AD44E5C}|SSA-B Canteen.csproj|solutionrelative:admin\\admindashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{164A4824-D519-4A03-93B6-DC635AD44E5C}|SSA-B Canteen.csproj|c:\\users\\user\\source\\repos\\ssa-b canteen\\admin\\admindashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{164A4824-D519-4A03-93B6-DC635AD44E5C}|SSA-B Canteen.csproj|solutionrelative:admin\\admindashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{164A4824-D519-4A03-93B6-DC635AD44E5C}|SSA-B Canteen.csproj|c:\\users\\user\\source\\repos\\ssa-b canteen\\admin\\admindashboard.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{164A4824-D519-4A03-93B6-DC635AD44E5C}|SSA-B Canteen.csproj|solutionrelative:admin\\admindashboard.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,7 +34,7 @@
       "DocumentGroups": [
         {
           "DockedHeight": 237,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Bookmark",
@@ -42,39 +54,79 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "AddProduct.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\SSA-B Canteen\\Admin\\AddProduct.Designer.cs",
-              "RelativeDocumentMoniker": "Admin\\AddProduct.Designer.cs",
-              "ToolTip": "C:\\Users\\User\\source\\repos\\SSA-B Canteen\\Admin\\AddProduct.Designer.cs",
-              "RelativeToolTip": "Admin\\AddProduct.Designer.cs",
-              "ViewState": "AgIAAHsAAAAAAAAAAAAmwH0AAAAyAAAAAAAAAA==",
+              "DocumentIndex": 5,
+              "Title": "AdminDashboard.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\SSA-B Canteen\\Admin\\AdminDashboard.Designer.cs",
+              "RelativeDocumentMoniker": "Admin\\AdminDashboard.Designer.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\SSA-B Canteen\\Admin\\AdminDashboard.Designer.cs",
+              "RelativeToolTip": "Admin\\AdminDashboard.Designer.cs",
+              "ViewState": "AgIAAFEAAAAAAAAAAIAwwFMAAAA5AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-13T01:27:33.785Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "AddProduct.cs",
-              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\SSA-B Canteen\\Admin\\AddProduct.cs",
-              "RelativeDocumentMoniker": "Admin\\AddProduct.cs",
-              "ToolTip": "C:\\Users\\User\\source\\repos\\SSA-B Canteen\\Admin\\AddProduct.cs",
-              "RelativeToolTip": "Admin\\AddProduct.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAIwHEAAAA7AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-12T10:47:49.144Z",
+              "WhenOpened": "2025-06-14T04:33:16.093Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "AddProduct.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\SSA-B Canteen\\Admin\\AddProduct.cs",
-              "RelativeDocumentMoniker": "Admin\\AddProduct.cs",
-              "ToolTip": "C:\\Users\\User\\source\\repos\\SSA-B Canteen\\Admin\\AddProduct.cs [Design]",
-              "RelativeToolTip": "Admin\\AddProduct.cs [Design]",
+              "DocumentIndex": 3,
+              "Title": "AdminDashboard.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\SSA-B Canteen\\Admin\\AdminDashboard.cs",
+              "RelativeDocumentMoniker": "Admin\\AdminDashboard.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\SSA-B Canteen\\Admin\\AdminDashboard.cs",
+              "RelativeToolTip": "Admin\\AdminDashboard.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAA6wCIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-12T13:07:21.369Z"
+              "WhenOpened": "2025-06-14T04:32:39.344Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "AdminDashboard.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\SSA-B Canteen\\Admin\\AdminDashboard.cs",
+              "RelativeDocumentMoniker": "Admin\\AdminDashboard.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\SSA-B Canteen\\Admin\\AdminDashboard.cs [Design]",
+              "RelativeToolTip": "Admin\\AdminDashboard.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-14T04:31:23.223Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Cashier.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\SSA-B Canteen\\Cashier\\Cashier.cs",
+              "RelativeDocumentMoniker": "Cashier\\Cashier.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\SSA-B Canteen\\Cashier\\Cashier.cs [Design]",
+              "RelativeToolTip": "Cashier\\Cashier.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-14T04:25:17.453Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Cashier.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\SSA-B Canteen\\Cashier\\Cashier.Designer.cs",
+              "RelativeDocumentMoniker": "Cashier\\Cashier.Designer.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\SSA-B Canteen\\Cashier\\Cashier.Designer.cs",
+              "RelativeToolTip": "Cashier\\Cashier.Designer.cs",
+              "ViewState": "AgIAAOMAAAAAAAAAAIAwwA8BAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-14T04:23:38.813Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Cashier.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\SSA-B Canteen\\Cashier\\Cashier.cs",
+              "RelativeDocumentMoniker": "Cashier\\Cashier.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\SSA-B Canteen\\Cashier\\Cashier.cs",
+              "RelativeToolTip": "Cashier\\Cashier.cs",
+              "ViewState": "AgIAACcAAAAAAAAAAAAowD8AAABDAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-14T04:19:12.778Z",
+              "EditorCaption": ""
             }
           ]
         }
