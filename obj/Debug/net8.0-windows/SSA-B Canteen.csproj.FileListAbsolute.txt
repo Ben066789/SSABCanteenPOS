@@ -44,4 +44,8 @@ C:\Users\User\source\repos\SSA-B Canteen\obj\Debug\net8.0-windows\SSA-B Ca.9A8D5
 C:\Users\User\source\repos\SSA-B Canteen\obj\Debug\net8.0-windows\SSA_B_Canteen.AddProduct.resources
 C:\Users\User\source\repos\SSA-B Canteen\bin\Debug\net8.0-windows\zxing.dll
 C:\Users\User\source\repos\SSA-B Canteen\obj\Debug\net8.0-windows\SSA-B Canteen.sourcelink.json
-C:\Users\User\source\repos\SSA-B Canteen\obj\Debug\net8.0-windows\SSA_B_Canteen.Cashier.resources
+C:\Users\User\source\repos\SSA-B Canteen\obj\Debug\net8.0-windows\SSA_B_Canteen.AccountManager.resources
+C:\Users\User\source\repos\SSA-B Canteen\obj\Debug\net8.0-windows\SSA_B_Canteen.Credit.resources
+C:\Users\User\source\repos\SSA-B Canteen\obj\Debug\net8.0-windows\SSA_B_Canteen.Admin.Login.resources
+C:\Users\User\source\repos\SSA-B Canteen\obj\Debug\net8.0-windows\SSA_B_Canteen.Cashier.Cashier.resources
+C:\Users\User\source\repos\SSA-B Canteen\obj\Debug\net8.0-windows\SSA_B_Canteen.Cashier.CreditPoster.resources

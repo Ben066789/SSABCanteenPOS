@@ -14,4 +14,9 @@
     <PackageReference Include="zxing.net" Version="0.16.10" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Admin\" />
+    <Folder Include="Cashier\" />
+  </ItemGroup>
+
 </Project>

@@ -1,4 +1,4 @@
-﻿namespace SSA_B_Canteen
+﻿namespace SSA_B_Canteen.Cashier
 {
     partial class Cashier
     {
@@ -36,6 +36,7 @@
             label5 = new Label();
             txtBoxQuantity = new TextBox();
             panelItem = new Panel();
+            txtBoxBarcode = new TextBox();
             lblItemTotal = new Label();
             label1 = new Label();
             label6 = new Label();
@@ -46,7 +47,6 @@
             lblChange = new Label();
             panelTotal = new Panel();
             btnComplete = new CustomControls.RJControls.RJButton();
-            txtBoxBarcode = new TextBox();
             ((System.ComponentModel.ISupportInitialize)ItemList).BeginInit();
             panelItem.SuspendLayout();
             panelTotal.SuspendLayout();
@@ -55,8 +55,10 @@
             // ItemList
             // 
             ItemList.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            ItemList.Location = new Point(15, 22);
+            ItemList.Location = new Point(15, 25);
             ItemList.Name = "ItemList";
+            ItemList.ReadOnly = true;
+            ItemList.RowHeadersVisible = false;
             ItemList.Size = new Size(579, 522);
             ItemList.TabIndex = 0;
             // 
@@ -136,6 +138,14 @@
             panelItem.Name = "panelItem";
             panelItem.Size = new Size(258, 266);
             panelItem.TabIndex = 3;
+            // 
+            // txtBoxBarcode
+            // 
+            txtBoxBarcode.BackColor = SystemColors.Window;
+            txtBoxBarcode.Location = new Point(3, 3);
+            txtBoxBarcode.Name = "txtBoxBarcode";
+            txtBoxBarcode.Size = new Size(187, 23);
+            txtBoxBarcode.TabIndex = 0;
             // 
             // lblItemTotal
             // 
@@ -251,14 +261,6 @@
             btnComplete.TextColor = Color.White;
             btnComplete.UseVisualStyleBackColor = false;
             // 
-            // txtBoxBarcode
-            // 
-            txtBoxBarcode.BackColor = SystemColors.Window;
-            txtBoxBarcode.Location = new Point(3, 3);
-            txtBoxBarcode.Name = "txtBoxBarcode";
-            txtBoxBarcode.Size = new Size(187, 23);
-            txtBoxBarcode.TabIndex = 0;
-            // 
             // Cashier
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -268,7 +270,7 @@
             Controls.Add(ItemList);
             Controls.Add(panelTotal);
             Name = "Cashier";
-            Text = "Form1";
+            Text = "Cashier";
             ((System.ComponentModel.ISupportInitialize)ItemList).EndInit();
             panelItem.ResumeLayout(false);
             panelItem.PerformLayout();

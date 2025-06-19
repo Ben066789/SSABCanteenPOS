@@ -3,12 +3,12 @@ using System.Data;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 
-namespace SSA_B_Canteen
+namespace SSA_B_Canteen.Cashier
 {
     public partial class Cashier : Form
     {
         private string connstring = "Server=127.0.0.1; Database=ssab_canteen; User ID=root; Password=;";
-
+        private CreditPoster creditForm;
         public Cashier()
         {
             InitializeComponent();
@@ -18,6 +18,7 @@ namespace SSA_B_Canteen
             txtBoxCash.TextChanged += txtBoxCash_TextChanged;
             btnComplete.Click += btnComplete_Click;
             txtBoxCash.KeyDown += txtBoxCash_KeyDown;
+            this.KeyDown += Cashier_KeyDown;
 
 
             ItemList.Columns.Add("Barcode", "Barcode");
@@ -25,8 +26,26 @@ namespace SSA_B_Canteen
             ItemList.Columns.Add("Quantity", "Quantity");
             ItemList.Columns.Add("Price", "Price");
             ItemList.Columns.Add("Total", "Total");
-        }
 
+            tableStyle();
+        }
+        private void Cashier_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F10)
+            {
+                if (creditForm == null || creditForm.IsDisposed)
+                {
+                    creditForm = new CreditPoster();
+                    creditForm.StartPosition = FormStartPosition.Manual;
+                    // Optional: Position near the main form
+                    creditForm.Show(this);
+                }
+                else
+                {
+                    creditForm.Focus();
+                }
+            }
+        }
         private void txtBoxBarcode_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -37,7 +56,7 @@ namespace SSA_B_Canteen
                     conn.Open();
                     using (var cmd = conn.CreateCommand())
                     {
-                        cmd.CommandText = "SELECT name, price FROM products WHERE barcode = @barcode LIMIT 1";
+                        cmd.CommandText = "SELECT name, price FROM items WHERE barcode = @barcode LIMIT 1";
                         cmd.Parameters.AddWithValue("@barcode", barcode);
                         using (var reader = cmd.ExecuteReader())
                         {
@@ -56,7 +75,6 @@ namespace SSA_B_Canteen
                 }
             }
         }
-
         private void txtBoxQuantity_TextChanged(object sender, EventArgs e)
         {
             if (decimal.TryParse(lblProductPrice.Text, out var price) && int.TryParse(txtBoxQuantity.Text, out var qty))
@@ -68,7 +86,6 @@ namespace SSA_B_Canteen
                 lblItemTotal.Text = "0.00";
             }
         }
-
         private void txtBoxQuantity_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -86,7 +103,6 @@ namespace SSA_B_Canteen
                 txtBoxBarcode.Focus();
             }
         }
-
         private void UpdateFinalTotal()
         {
             decimal sum = 0;
@@ -97,7 +113,6 @@ namespace SSA_B_Canteen
             }
             lblFinalTotal.Text = sum.ToString("0.00");
         }
-
         private void txtBoxCash_TextChanged(object sender, EventArgs e)
         {
             decimal finalTotal = decimal.TryParse(lblFinalTotal.Text, out var ft) ? ft : 0;
@@ -118,7 +133,7 @@ namespace SSA_B_Canteen
                         int qty = Convert.ToInt32(row.Cells[2].Value);
                         using (var cmd = conn.CreateCommand())
                         {
-                            cmd.CommandText = "UPDATE products SET quantity = quantity - @qty WHERE barcode = @barcode";
+                            cmd.CommandText = "UPDATE items SET quantity = quantity - @qty WHERE barcode = @barcode";
                             cmd.Parameters.AddWithValue("@qty", qty);
                             cmd.Parameters.AddWithValue("@barcode", barcode);
                             cmd.ExecuteNonQuery();
@@ -131,7 +146,6 @@ namespace SSA_B_Canteen
                 lblChange.Text = "";
             }
         }
-
         private void btnComplete_Click(object sender, EventArgs e)
         {
             using (var conn = new MySqlConnection(connstring))
@@ -144,7 +158,7 @@ namespace SSA_B_Canteen
                     int qty = Convert.ToInt32(row.Cells[2].Value);
                     using (var cmd = conn.CreateCommand())
                     {
-                        cmd.CommandText = "UPDATE products SET quantity = quantity - @qty WHERE barcode = @barcode";
+                        cmd.CommandText = "UPDATE items SET quantity = quantity - @qty WHERE barcode = @barcode";
                         cmd.Parameters.AddWithValue("@qty", qty);
                         cmd.Parameters.AddWithValue("@barcode", barcode);
                         cmd.ExecuteNonQuery();
@@ -155,6 +169,29 @@ namespace SSA_B_Canteen
             ItemList.Rows.Clear();
             UpdateFinalTotal();
             lblChange.Text = "";
+        }
+        private void tableStyle()
+        {
+            ItemList.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            ItemList.MultiSelect = false;
+            ItemList.BorderStyle = BorderStyle.None;
+            ItemList.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(238, 239, 249);
+            ItemList.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            ItemList.DefaultCellStyle.SelectionBackColor = Color.LightGray;
+            ItemList.DefaultCellStyle.SelectionForeColor = Color.Black;
+            ItemList.BackgroundColor = Color.White;
+
+            ItemList.EnableHeadersVisualStyles = false;
+            ItemList.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            ItemList.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(20, 25, 72);
+            ItemList.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+
+            ItemList.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            ItemList.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            ItemList.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
+
+            ItemList.AllowUserToResizeRows = false;
+            ItemList.AllowUserToResizeColumns = false;
         }
     }
 }

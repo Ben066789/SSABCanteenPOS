@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             pnlNavigate = new Panel();
+            btnAccMgr = new CustomControls.RJControls.RJButton();
             btnCashier = new CustomControls.RJControls.RJButton();
             btnAddProducts = new CustomControls.RJControls.RJButton();
             pnlNavigate.SuspendLayout();
@@ -36,12 +37,33 @@
             // 
             // pnlNavigate
             // 
+            pnlNavigate.Controls.Add(btnAccMgr);
             pnlNavigate.Controls.Add(btnCashier);
             pnlNavigate.Controls.Add(btnAddProducts);
             pnlNavigate.Location = new Point(12, 145);
             pnlNavigate.Name = "pnlNavigate";
             pnlNavigate.Size = new Size(179, 455);
             pnlNavigate.TabIndex = 0;
+            // 
+            // btnAccMgr
+            // 
+            btnAccMgr.BackColor = Color.CornflowerBlue;
+            btnAccMgr.BackgroundColor = Color.CornflowerBlue;
+            btnAccMgr.BorderColor = Color.White;
+            btnAccMgr.BorderRadius = 10;
+            btnAccMgr.BorderSize = 0;
+            btnAccMgr.FlatAppearance.BorderSize = 0;
+            btnAccMgr.FlatStyle = FlatStyle.Flat;
+            btnAccMgr.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnAccMgr.ForeColor = Color.White;
+            btnAccMgr.Location = new Point(3, 108);
+            btnAccMgr.Name = "btnAccMgr";
+            btnAccMgr.Size = new Size(172, 46);
+            btnAccMgr.TabIndex = 1;
+            btnAccMgr.Text = "Account Manager";
+            btnAccMgr.TextColor = Color.White;
+            btnAccMgr.UseVisualStyleBackColor = false;
+            btnAccMgr.Click += btnAccMgr_Click;
             // 
             // btnCashier
             // 
@@ -101,5 +123,6 @@
         private CustomControls.RJControls.RJButton rjButton2;
         private CustomControls.RJControls.RJButton btnAddProducts;
         private CustomControls.RJControls.RJButton btnCashier;
+        private CustomControls.RJControls.RJButton btnAccMgr;
     }
 }

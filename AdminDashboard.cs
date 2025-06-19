@@ -22,13 +22,19 @@ namespace SSA_B_Canteen
         private void btnAddProducts_Click(object sender, EventArgs e)
         {
             var addProductForm = new AddProduct();
-            addProductForm.ShowDialog(this);
+            addProductForm.Show();
         }
 
         private void btnCashier_Click(object sender, EventArgs e)
         {
-            var cashierForm = new SSA_B_Canteen.Cashier();
-            cashierForm.Show(); // Use ShowDialog() if you want it modal
+            var cashierForm = new Cashier.Cashier();
+            cashierForm.Show();
+        }
+
+        private void btnAccMgr_Click(object sender, EventArgs e)
+        {
+            var accountManagerForm = new SSA_B_Canteen.AccountManager();
+            accountManagerForm.Show();
         }
     }
 }

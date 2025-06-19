@@ -73,7 +73,7 @@ namespace SSA_B_Canteen
             txtBoxCostPrice.Texts = string.Empty;
             txtBoxPrice.Texts = string.Empty;
         }
-        private void refreshProductTable()
+        /*private void refreshProductTable()
         {
             ListProducts.Rows.Clear();
             using (var conn = new MySqlConnection(connstring))
@@ -81,7 +81,7 @@ namespace SSA_B_Canteen
                 conn.Open();
                 using (var cmd = conn.CreateCommand())
                 {
-                    cmd.CommandText = "SELECT barcode, name, quantity, cost_price, price, date_added FROM products";
+                    cmd.CommandText = "SELECT barcode, name, quantity, cost_price, price, date_added FROM items";
                     using (var reader = cmd.ExecuteReader())
                     {
                         while (reader.Read())
@@ -98,7 +98,7 @@ namespace SSA_B_Canteen
                     }
                 }
             }
-        }
+        }*/
         //---BUTTON CLICK EVENTS---//
         private void btnAdd_Click(object sender, EventArgs e)
         {
@@ -130,7 +130,7 @@ namespace SSA_B_Canteen
         {
             if (ListProducts.Rows.Count == 0)
             {
-                MessageBox.Show("No products to add.");
+                MessageBox.Show("No items to add.");
                 return;
             }
 
@@ -139,7 +139,7 @@ namespace SSA_B_Canteen
                 conn.Open();
                 using (var cmd = conn.CreateCommand())
                 {
-                    cmd.CommandText = @"INSERT INTO products
+                    cmd.CommandText = @"INSERT INTO items
                 (barcode, name, quantity, cost_price, price, date_added) 
                 VALUES (@barcode, @name, @quantity, @cost_price, @price, @date_added)";
 
@@ -185,7 +185,7 @@ namespace SSA_B_Canteen
                 int currentQuantity = 0;
                 using (var getCmd = conn.CreateCommand())
                 {
-                    getCmd.CommandText = "SELECT quantity FROM products WHERE barcode = @barcode";
+                    getCmd.CommandText = "SELECT quantity FROM items WHERE barcode = @barcode";
                     getCmd.Parameters.AddWithValue("@barcode", barcode);
                     var result = getCmd.ExecuteScalar();
                     if (result != null && int.TryParse(result.ToString(), out var existingQty))
@@ -197,7 +197,7 @@ namespace SSA_B_Canteen
                 // Update product
                 using (var updateCmd = conn.CreateCommand())
                 {
-                    updateCmd.CommandText = @"UPDATE products 
+                    updateCmd.CommandText = @"UPDATE items 
                 SET quantity = @quantity, cost_price = @cost_price, price = @price, date_added = @date_added
                 WHERE barcode = @barcode";
                     updateCmd.Parameters.AddWithValue("@quantity", currentQuantity + addQuantity);
@@ -251,7 +251,7 @@ namespace SSA_B_Canteen
                 conn.Open();
                 using (var cmd = conn.CreateCommand())
                 {
-                    cmd.CommandText = "SELECT barcode, name, quantity, cost_price, price, date_added FROM products WHERE barcode = @barcode LIMIT 1";
+                    cmd.CommandText = "SELECT barcode, name, quantity, cost_price, price, date_added FROM items WHERE barcode = @barcode LIMIT 1";
                     cmd.Parameters.AddWithValue("@barcode", txtBoxBarcode.Texts);
 
                     using (var reader = cmd.ExecuteReader())
@@ -290,7 +290,7 @@ namespace SSA_B_Canteen
                     conn.Open();
                     using (var cmd = conn.CreateCommand())
                     {
-                        cmd.CommandText = "SELECT barcode, name, quantity, cost_price, price, date_added FROM products WHERE barcode = @barcode LIMIT 1";
+                        cmd.CommandText = "SELECT barcode, name, quantity, cost_price, price, date_added FROM items WHERE barcode = @barcode LIMIT 1";
                         cmd.Parameters.AddWithValue("@barcode", txtBoxBarcode.Texts);
 
                         using (var reader = cmd.ExecuteReader())
