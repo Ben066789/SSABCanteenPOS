@@ -10,13 +10,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="iTextSharp" Version="5.5.13.4" />
     <PackageReference Include="MySql.Data" Version="9.3.0" />
+    <PackageReference Include="ScottPlot.WinForms" Version="5.0.55" />
     <PackageReference Include="zxing.net" Version="0.16.10" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Admin\" />
-    <Folder Include="Cashier\" />
   </ItemGroup>
 
 </Project>

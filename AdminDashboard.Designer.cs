@@ -28,22 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            pnlNavigate = new Panel();
             btnAccMgr = new CustomControls.RJControls.RJButton();
-            btnCashier = new CustomControls.RJControls.RJButton();
-            btnAddProducts = new CustomControls.RJControls.RJButton();
-            pnlNavigate.SuspendLayout();
+            dgvSales = new DataGridView();
+            lblTotal = new Label();
+            lblTotalSum = new Label();
+            roundedPanel1 = new RoundedPanel();
+            btnAllItems = new CustomControls.RJControls.RJButton();
+            btnRestock = new CustomControls.RJControls.RJButton();
+            btnInventoryEntry = new CustomControls.RJControls.RJButton();
+            label1 = new Label();
+            roundedPanelGrad1 = new RoundedPanelGrad();
+            rjButton1 = new CustomControls.RJControls.RJButton();
+            ((System.ComponentModel.ISupportInitialize)dgvSales).BeginInit();
+            roundedPanel1.SuspendLayout();
+            roundedPanelGrad1.SuspendLayout();
             SuspendLayout();
-            // 
-            // pnlNavigate
-            // 
-            pnlNavigate.Controls.Add(btnAccMgr);
-            pnlNavigate.Controls.Add(btnCashier);
-            pnlNavigate.Controls.Add(btnAddProducts);
-            pnlNavigate.Location = new Point(12, 145);
-            pnlNavigate.Name = "pnlNavigate";
-            pnlNavigate.Size = new Size(179, 455);
-            pnlNavigate.TabIndex = 0;
             // 
             // btnAccMgr
             // 
@@ -56,73 +55,205 @@
             btnAccMgr.FlatStyle = FlatStyle.Flat;
             btnAccMgr.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnAccMgr.ForeColor = Color.White;
-            btnAccMgr.Location = new Point(3, 108);
+            btnAccMgr.Location = new Point(242, 20);
             btnAccMgr.Name = "btnAccMgr";
-            btnAccMgr.Size = new Size(172, 46);
+            btnAccMgr.Size = new Size(174, 46);
             btnAccMgr.TabIndex = 1;
             btnAccMgr.Text = "Account Manager";
             btnAccMgr.TextColor = Color.White;
             btnAccMgr.UseVisualStyleBackColor = false;
             btnAccMgr.Click += btnAccMgr_Click;
             // 
-            // btnCashier
+            // dgvSales
             // 
-            btnCashier.BackColor = Color.CornflowerBlue;
-            btnCashier.BackgroundColor = Color.CornflowerBlue;
-            btnCashier.BorderColor = Color.White;
-            btnCashier.BorderRadius = 10;
-            btnCashier.BorderSize = 0;
-            btnCashier.FlatAppearance.BorderSize = 0;
-            btnCashier.FlatStyle = FlatStyle.Flat;
-            btnCashier.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnCashier.ForeColor = Color.White;
-            btnCashier.Location = new Point(3, 56);
-            btnCashier.Name = "btnCashier";
-            btnCashier.Size = new Size(172, 46);
-            btnCashier.TabIndex = 1;
-            btnCashier.Text = "Cashier";
-            btnCashier.TextColor = Color.White;
-            btnCashier.UseVisualStyleBackColor = false;
-            btnCashier.Click += btnCashier_Click;
+            dgvSales.BackgroundColor = SystemColors.ButtonFace;
+            dgvSales.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvSales.GridColor = Color.Gainsboro;
+            dgvSales.Location = new Point(242, 72);
+            dgvSales.Name = "dgvSales";
+            dgvSales.RowHeadersVisible = false;
+            dgvSales.Size = new Size(942, 374);
+            dgvSales.TabIndex = 2;
+            dgvSales.TabStop = false;
             // 
-            // btnAddProducts
+            // lblTotal
             // 
-            btnAddProducts.BackColor = Color.CornflowerBlue;
-            btnAddProducts.BackgroundColor = Color.CornflowerBlue;
-            btnAddProducts.BorderColor = Color.White;
-            btnAddProducts.BorderRadius = 10;
-            btnAddProducts.BorderSize = 0;
-            btnAddProducts.FlatAppearance.BorderSize = 0;
-            btnAddProducts.FlatStyle = FlatStyle.Flat;
-            btnAddProducts.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnAddProducts.ForeColor = Color.White;
-            btnAddProducts.Location = new Point(4, 4);
-            btnAddProducts.Name = "btnAddProducts";
-            btnAddProducts.Size = new Size(172, 46);
-            btnAddProducts.TabIndex = 1;
-            btnAddProducts.Text = "Add Item";
-            btnAddProducts.TextColor = Color.White;
-            btnAddProducts.UseVisualStyleBackColor = false;
-            btnAddProducts.Click += btnAddProducts_Click;
+            lblTotal.AutoSize = true;
+            lblTotal.BackColor = Color.Transparent;
+            lblTotal.Font = new Font("Century Gothic", 15F, FontStyle.Bold);
+            lblTotal.ForeColor = Color.FromArgb(64, 64, 64);
+            lblTotal.Location = new Point(841, 472);
+            lblTotal.Name = "lblTotal";
+            lblTotal.Size = new Size(67, 23);
+            lblTotal.TabIndex = 3;
+            lblTotal.Text = "Total: ";
+            // 
+            // lblTotalSum
+            // 
+            lblTotalSum.AutoSize = true;
+            lblTotalSum.Font = new Font("Century Gothic", 25F, FontStyle.Bold);
+            lblTotalSum.ForeColor = Color.RoyalBlue;
+            lblTotalSum.Location = new Point(900, 458);
+            lblTotalSum.Name = "lblTotalSum";
+            lblTotalSum.Size = new Size(93, 40);
+            lblTotalSum.TabIndex = 3;
+            lblTotalSum.Text = "Total";
+            // 
+            // roundedPanel1
+            // 
+            roundedPanel1.BackColor = Color.Transparent;
+            roundedPanel1.BorderColor = Color.White;
+            roundedPanel1.BorderRadius = 5;
+            roundedPanel1.BorderSize = 7;
+            roundedPanel1.Controls.Add(btnAllItems);
+            roundedPanel1.Controls.Add(btnRestock);
+            roundedPanel1.Controls.Add(btnInventoryEntry);
+            roundedPanel1.ForeColor = Color.Black;
+            roundedPanel1.Location = new Point(8, 25);
+            roundedPanel1.Name = "roundedPanel1";
+            roundedPanel1.Size = new Size(207, 197);
+            roundedPanel1.TabIndex = 4;
+            // 
+            // btnAllItems
+            // 
+            btnAllItems.BackColor = Color.CornflowerBlue;
+            btnAllItems.BackgroundColor = Color.CornflowerBlue;
+            btnAllItems.BorderColor = Color.White;
+            btnAllItems.BorderRadius = 10;
+            btnAllItems.BorderSize = 0;
+            btnAllItems.FlatAppearance.BorderSize = 0;
+            btnAllItems.FlatStyle = FlatStyle.Flat;
+            btnAllItems.Font = new Font("Century Gothic", 15F, FontStyle.Bold);
+            btnAllItems.ForeColor = Color.White;
+            btnAllItems.Location = new Point(17, 26);
+            btnAllItems.Name = "btnAllItems";
+            btnAllItems.Size = new Size(172, 46);
+            btnAllItems.TabIndex = 1;
+            btnAllItems.Text = "Browse";
+            btnAllItems.TextColor = Color.White;
+            btnAllItems.UseVisualStyleBackColor = false;
+            btnAllItems.Click += btnAllItems_Click;
+            // 
+            // btnRestock
+            // 
+            btnRestock.BackColor = Color.CornflowerBlue;
+            btnRestock.BackgroundColor = Color.CornflowerBlue;
+            btnRestock.BorderColor = Color.White;
+            btnRestock.BorderRadius = 10;
+            btnRestock.BorderSize = 0;
+            btnRestock.FlatAppearance.BorderSize = 0;
+            btnRestock.FlatStyle = FlatStyle.Flat;
+            btnRestock.Font = new Font("Century Gothic", 15F, FontStyle.Bold);
+            btnRestock.ForeColor = Color.White;
+            btnRestock.Location = new Point(17, 130);
+            btnRestock.Name = "btnRestock";
+            btnRestock.Size = new Size(172, 46);
+            btnRestock.TabIndex = 1;
+            btnRestock.Text = "Restock";
+            btnRestock.TextColor = Color.White;
+            btnRestock.UseVisualStyleBackColor = false;
+            btnRestock.Click += btnRestock_Click;
+            // 
+            // btnInventoryEntry
+            // 
+            btnInventoryEntry.BackColor = Color.CornflowerBlue;
+            btnInventoryEntry.BackgroundColor = Color.CornflowerBlue;
+            btnInventoryEntry.BorderColor = Color.White;
+            btnInventoryEntry.BorderRadius = 10;
+            btnInventoryEntry.BorderSize = 0;
+            btnInventoryEntry.FlatAppearance.BorderSize = 0;
+            btnInventoryEntry.FlatStyle = FlatStyle.Flat;
+            btnInventoryEntry.Font = new Font("Century Gothic", 15F, FontStyle.Bold);
+            btnInventoryEntry.ForeColor = Color.White;
+            btnInventoryEntry.Location = new Point(17, 78);
+            btnInventoryEntry.Name = "btnInventoryEntry";
+            btnInventoryEntry.Size = new Size(172, 46);
+            btnInventoryEntry.TabIndex = 1;
+            btnInventoryEntry.Text = "Entry";
+            btnInventoryEntry.TextColor = Color.White;
+            btnInventoryEntry.UseVisualStyleBackColor = false;
+            btnInventoryEntry.Click += btnAddProducts_Click;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.BackColor = Color.Transparent;
+            label1.Font = new Font("Century Gothic", 12F, FontStyle.Bold);
+            label1.ForeColor = Color.FromArgb(64, 64, 64);
+            label1.Location = new Point(23, 19);
+            label1.Name = "label1";
+            label1.Size = new Size(80, 19);
+            label1.TabIndex = 5;
+            label1.Text = "Inventory";
+            // 
+            // roundedPanelGrad1
+            // 
+            roundedPanelGrad1.BorderColor = Color.White;
+            roundedPanelGrad1.BorderRadius = 10;
+            roundedPanelGrad1.BorderSize = 1;
+            roundedPanelGrad1.Controls.Add(label1);
+            roundedPanelGrad1.Controls.Add(rjButton1);
+            roundedPanelGrad1.Controls.Add(roundedPanel1);
+            roundedPanelGrad1.GradientAngle = 120F;
+            roundedPanelGrad1.GradientColor1 = Color.White;
+            roundedPanelGrad1.GradientColor2 = SystemColors.ActiveCaption;
+            roundedPanelGrad1.Location = new Point(12, 72);
+            roundedPanelGrad1.Name = "roundedPanelGrad1";
+            roundedPanelGrad1.Size = new Size(220, 374);
+            roundedPanelGrad1.TabIndex = 6;
+            // 
+            // rjButton1
+            // 
+            rjButton1.BackColor = Color.CornflowerBlue;
+            rjButton1.BackgroundColor = Color.CornflowerBlue;
+            rjButton1.BorderColor = Color.White;
+            rjButton1.BorderRadius = 10;
+            rjButton1.BorderSize = 0;
+            rjButton1.FlatAppearance.BorderSize = 0;
+            rjButton1.FlatStyle = FlatStyle.Flat;
+            rjButton1.Font = new Font("Century Gothic", 15F, FontStyle.Bold);
+            rjButton1.ForeColor = Color.White;
+            rjButton1.Location = new Point(25, 250);
+            rjButton1.Name = "rjButton1";
+            rjButton1.Size = new Size(172, 46);
+            rjButton1.TabIndex = 1;
+            rjButton1.Text = "Restock";
+            rjButton1.TextColor = Color.White;
+            rjButton1.UseVisualStyleBackColor = false;
+            rjButton1.Click += btnRestock_Click;
             // 
             // AdminDashboard
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1094, 612);
-            Controls.Add(pnlNavigate);
+            ClientSize = new Size(1219, 518);
+            Controls.Add(lblTotalSum);
+            Controls.Add(roundedPanelGrad1);
+            Controls.Add(btnAccMgr);
+            Controls.Add(lblTotal);
+            Controls.Add(dgvSales);
+            ForeColor = Color.FromArgb(64, 64, 64);
             Name = "AdminDashboard";
             Text = "Form1";
-            pnlNavigate.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dgvSales).EndInit();
+            roundedPanel1.ResumeLayout(false);
+            roundedPanelGrad1.ResumeLayout(false);
+            roundedPanelGrad1.PerformLayout();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
-
-        private Panel pnlNavigate;
-        private CustomControls.RJControls.RJButton rjButton2;
-        private CustomControls.RJControls.RJButton btnAddProducts;
-        private CustomControls.RJControls.RJButton btnCashier;
         private CustomControls.RJControls.RJButton btnAccMgr;
+        private DataGridView dgvSales;
+        private Label lblTotal;
+        private Label lblTotalSum;
+        private RoundedPanel roundedPanel1;
+        private Label label1;
+        private CustomControls.RJControls.RJButton btnAllItems;
+        private CustomControls.RJControls.RJButton btnInventoryEntry;
+        private RoundedPanelGrad roundedPanelGrad1;
+        private CustomControls.RJControls.RJButton btnRestock;
+        private CustomControls.RJControls.RJButton rjButton1;
     }
 }

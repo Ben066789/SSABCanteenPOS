@@ -40,6 +40,16 @@ namespace SSA_B_Canteen.Admin
                             if (reader.Read())
                             {
                                 string role = reader["role"].ToString();
+                                int employeeId = Convert.ToInt32(reader["employee_id"]);
+
+                                // Set status to 1 (active)
+                                reader.Close();
+                                using (var updateCmd = new MySqlCommand("UPDATE accounts SET status = 1 WHERE employee_id = @eid", connection))
+                                {
+                                    updateCmd.Parameters.AddWithValue("@eid", employeeId);
+                                    updateCmd.ExecuteNonQuery();
+                                }
+
                                 if (role == "admin")
                                 {
                                     var adminDashboard = new AdminDashboard();
@@ -48,7 +58,7 @@ namespace SSA_B_Canteen.Admin
                                 }
                                 else if (role == "cashier")
                                 {
-                                    var cashierForm = new Cashier.Cashier();
+                                    var cashierForm = new Cashier(employeeId);
                                     cashierForm.Show();
                                     this.Hide();
                                 }
@@ -70,5 +80,6 @@ namespace SSA_B_Canteen.Admin
                 }
             }
         }
+
     }
 }

@@ -54,6 +54,14 @@
               "target": "Package",
               "version": "[9.3.0, )"
             },
+            "ScottPlot.WinForms": {
+              "target": "Package",
+              "version": "[5.0.55, )"
+            },
+            "iTextSharp": {
+              "target": "Package",
+              "version": "[5.5.13.4, )"
+            },
             "zxing.net": {
               "target": "Package",
               "version": "[0.16.10, )"
