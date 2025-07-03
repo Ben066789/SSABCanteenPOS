@@ -44,7 +44,7 @@ namespace SSA_B_Canteen.Admin
 
                                 // Set status to 1 (active)
                                 reader.Close();
-                                using (var updateCmd = new MySqlCommand("UPDATE accounts SET status = 1 WHERE employee_id = @eid", connection))
+                                using (var updateCmd = new MySqlCommand("UPDATE accounts SET status = 'active' WHERE employee_id = @eid", connection))
                                 {
                                     updateCmd.Parameters.AddWithValue("@eid", employeeId);
                                     updateCmd.ExecuteNonQuery();

@@ -235,6 +235,12 @@ namespace SSA_B_Canteen
             var Restock = new Restock();
             Restock.Show();
         }
+        private void BtnSalesReport_Click(object sender, EventArgs e)
+        {
+            var SalesReport = new SalesReport();
+            SalesReport.Show();
+        }
+
         //--EXITS--//
         /*private void keydown_exit(object sender, KeyEventArgs e)
         {
@@ -269,6 +275,7 @@ namespace SSA_B_Canteen
                 Application.Exit();
             }
         }
+
 
         //--EXITS--//
 

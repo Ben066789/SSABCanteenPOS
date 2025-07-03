@@ -38,7 +38,7 @@
             btnInventoryEntry = new CustomControls.RJControls.RJButton();
             label1 = new Label();
             roundedPanelGrad1 = new RoundedPanelGrad();
-            rjButton1 = new CustomControls.RJControls.RJButton();
+            BtnSalesReport = new CustomControls.RJControls.RJButton();
             ((System.ComponentModel.ISupportInitialize)dgvSales).BeginInit();
             roundedPanel1.SuspendLayout();
             roundedPanelGrad1.SuspendLayout();
@@ -55,7 +55,7 @@
             btnAccMgr.FlatStyle = FlatStyle.Flat;
             btnAccMgr.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnAccMgr.ForeColor = Color.White;
-            btnAccMgr.Location = new Point(242, 20);
+            btnAccMgr.Location = new Point(420, 393);
             btnAccMgr.Name = "btnAccMgr";
             btnAccMgr.Size = new Size(174, 46);
             btnAccMgr.TabIndex = 1;
@@ -69,7 +69,7 @@
             dgvSales.BackgroundColor = SystemColors.ButtonFace;
             dgvSales.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvSales.GridColor = Color.Gainsboro;
-            dgvSales.Location = new Point(242, 72);
+            dgvSales.Location = new Point(242, 12);
             dgvSales.Name = "dgvSales";
             dgvSales.RowHeadersVisible = false;
             dgvSales.Size = new Size(942, 374);
@@ -82,7 +82,7 @@
             lblTotal.BackColor = Color.Transparent;
             lblTotal.Font = new Font("Century Gothic", 15F, FontStyle.Bold);
             lblTotal.ForeColor = Color.FromArgb(64, 64, 64);
-            lblTotal.Location = new Point(841, 472);
+            lblTotal.Location = new Point(842, 407);
             lblTotal.Name = "lblTotal";
             lblTotal.Size = new Size(67, 23);
             lblTotal.TabIndex = 3;
@@ -93,7 +93,7 @@
             lblTotalSum.AutoSize = true;
             lblTotalSum.Font = new Font("Century Gothic", 25F, FontStyle.Bold);
             lblTotalSum.ForeColor = Color.RoyalBlue;
-            lblTotalSum.Location = new Point(900, 458);
+            lblTotalSum.Location = new Point(901, 393);
             lblTotalSum.Name = "lblTotalSum";
             lblTotalSum.Size = new Size(93, 40);
             lblTotalSum.TabIndex = 3;
@@ -109,7 +109,7 @@
             roundedPanel1.Controls.Add(btnRestock);
             roundedPanel1.Controls.Add(btnInventoryEntry);
             roundedPanel1.ForeColor = Color.Black;
-            roundedPanel1.Location = new Point(8, 25);
+            roundedPanel1.Location = new Point(7, 16);
             roundedPanel1.Name = "roundedPanel1";
             roundedPanel1.Size = new Size(207, 197);
             roundedPanel1.TabIndex = 4;
@@ -180,7 +180,7 @@
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Century Gothic", 12F, FontStyle.Bold);
             label1.ForeColor = Color.FromArgb(64, 64, 64);
-            label1.Location = new Point(23, 19);
+            label1.Location = new Point(25, 10);
             label1.Name = "label1";
             label1.Size = new Size(80, 19);
             label1.TabIndex = 5;
@@ -192,44 +192,44 @@
             roundedPanelGrad1.BorderRadius = 10;
             roundedPanelGrad1.BorderSize = 1;
             roundedPanelGrad1.Controls.Add(label1);
-            roundedPanelGrad1.Controls.Add(rjButton1);
             roundedPanelGrad1.Controls.Add(roundedPanel1);
             roundedPanelGrad1.GradientAngle = 120F;
             roundedPanelGrad1.GradientColor1 = Color.White;
             roundedPanelGrad1.GradientColor2 = SystemColors.ActiveCaption;
-            roundedPanelGrad1.Location = new Point(12, 72);
+            roundedPanelGrad1.Location = new Point(12, 12);
             roundedPanelGrad1.Name = "roundedPanelGrad1";
-            roundedPanelGrad1.Size = new Size(220, 374);
+            roundedPanelGrad1.Size = new Size(220, 224);
             roundedPanelGrad1.TabIndex = 6;
             // 
-            // rjButton1
+            // BtnSalesReport
             // 
-            rjButton1.BackColor = Color.CornflowerBlue;
-            rjButton1.BackgroundColor = Color.CornflowerBlue;
-            rjButton1.BorderColor = Color.White;
-            rjButton1.BorderRadius = 10;
-            rjButton1.BorderSize = 0;
-            rjButton1.FlatAppearance.BorderSize = 0;
-            rjButton1.FlatStyle = FlatStyle.Flat;
-            rjButton1.Font = new Font("Century Gothic", 15F, FontStyle.Bold);
-            rjButton1.ForeColor = Color.White;
-            rjButton1.Location = new Point(25, 250);
-            rjButton1.Name = "rjButton1";
-            rjButton1.Size = new Size(172, 46);
-            rjButton1.TabIndex = 1;
-            rjButton1.Text = "Restock";
-            rjButton1.TextColor = Color.White;
-            rjButton1.UseVisualStyleBackColor = false;
-            rjButton1.Click += btnRestock_Click;
+            BtnSalesReport.BackColor = Color.CornflowerBlue;
+            BtnSalesReport.BackgroundColor = Color.CornflowerBlue;
+            BtnSalesReport.BorderColor = Color.White;
+            BtnSalesReport.BorderRadius = 10;
+            BtnSalesReport.BorderSize = 0;
+            BtnSalesReport.FlatAppearance.BorderSize = 0;
+            BtnSalesReport.FlatStyle = FlatStyle.Flat;
+            BtnSalesReport.Font = new Font("Century Gothic", 15F, FontStyle.Bold);
+            BtnSalesReport.ForeColor = Color.White;
+            BtnSalesReport.Location = new Point(242, 392);
+            BtnSalesReport.Name = "BtnSalesReport";
+            BtnSalesReport.Size = new Size(172, 46);
+            BtnSalesReport.TabIndex = 1;
+            BtnSalesReport.Text = "Sales Report";
+            BtnSalesReport.TextColor = Color.White;
+            BtnSalesReport.UseVisualStyleBackColor = false;
+            BtnSalesReport.Click += BtnSalesReport_Click;
             // 
             // AdminDashboard
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1219, 518);
+            ClientSize = new Size(1198, 457);
             Controls.Add(lblTotalSum);
-            Controls.Add(roundedPanelGrad1);
             Controls.Add(btnAccMgr);
+            Controls.Add(BtnSalesReport);
+            Controls.Add(roundedPanelGrad1);
             Controls.Add(lblTotal);
             Controls.Add(dgvSales);
             ForeColor = Color.FromArgb(64, 64, 64);
@@ -254,6 +254,6 @@
         private CustomControls.RJControls.RJButton btnInventoryEntry;
         private RoundedPanelGrad roundedPanelGrad1;
         private CustomControls.RJControls.RJButton btnRestock;
-        private CustomControls.RJControls.RJButton rjButton1;
+        private CustomControls.RJControls.RJButton BtnSalesReport;
     }
 }

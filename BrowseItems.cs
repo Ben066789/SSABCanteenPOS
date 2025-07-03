@@ -261,7 +261,6 @@ namespace SSA_B_Canteen
             SetupColumns();
         }
 
-
         private void tableStyle()
         {
             dgvAllItems.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
@@ -344,9 +343,6 @@ namespace SSA_B_Canteen
                 MessageBox.Show("No updated items found.");
             }
         }
-
-
-
 
         /*private void btnPrevPage_Click(object sender, EventArgs e)
         {

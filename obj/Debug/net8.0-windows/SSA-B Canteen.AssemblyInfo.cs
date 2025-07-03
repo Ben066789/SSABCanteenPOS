@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SSA-B Canteen")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+403c26645195fd4fcaf1d86465abe3f4173eedf3")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+307d00348a466f85456dde706e12f9a5ccd28570")]
 [assembly: System.Reflection.AssemblyProductAttribute("SSA-B Canteen")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SSA-B Canteen")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

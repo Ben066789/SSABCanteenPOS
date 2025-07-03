@@ -31,6 +31,7 @@ namespace SSA_B_Canteen
             this.Bounds = Screen.PrimaryScreen.Bounds;
             this.AutoScaleMode = AutoScaleMode.Dpi;
             this.Resize += Cashier_Resize;
+            ItemList.CellEndEdit += ItemList_CellEndEdit;
             pnlCredit.Visible = false;
 
             ItemList.Columns.Add("Barcode", "Barcode");
@@ -63,6 +64,27 @@ namespace SSA_B_Canteen
             nameSearch.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
             nameSearch.AutoCompleteSource = AutoCompleteSource.CustomSource;
         }
+        private void ItemList_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            // Optionally, update the total for the row if quantity or price changed
+            if (e.ColumnIndex == 2) // 2 = "Quantity" column
+            {
+                var row = ItemList.Rows[e.RowIndex];
+                if (!row.IsNewRow)
+                {
+                    int qty = 1;
+                    decimal price = 0;
+                    int.TryParse(row.Cells[2].Value?.ToString(), out qty);
+                    decimal.TryParse(row.Cells[3].Value?.ToString(), out price);
+                    row.Cells[4].Value = (qty * price).ToString("0.00");
+                    UpdateFinalTotal();
+                }
+            }
+
+            // Focus back to the barcode textbox
+            txtBoxBarcode.Focus();
+        }
+
         /*public class CreditItem
         {
             public int ItemId { get; set; }
@@ -92,6 +114,7 @@ namespace SSA_B_Canteen
                     return;
                 }
 
+
                 // Center pnlCredit on the form
                 pnlCredit.Left = (this.ClientSize.Width - pnlCredit.Width) / 2;
                 pnlCredit.Top = (this.ClientSize.Height - pnlCredit.Height) / 2;
@@ -101,6 +124,28 @@ namespace SSA_B_Canteen
                 pnlCredit.Focus();
                 e.Handled = true;
             }
+            else if (e.KeyCode == Keys.Divide)
+            {
+                // Focus and begin editing the "Quantity" cell of the last non-new row
+                if (ItemList.Rows.Count > 0)
+                {
+                    int lastRowIndex = ItemList.Rows.Count - 1;
+                    if (!ItemList.Rows[lastRowIndex].IsNewRow)
+                    {
+                        ItemList.CurrentCell = ItemList.Rows[lastRowIndex].Cells[2]; // 2 = "Quantity" column
+                        ItemList.BeginEdit(true);
+                    }
+                    else if (ItemList.Rows.Count > 1)
+                    {
+                        // If the last row is the new row, focus the previous one
+                        lastRowIndex--;
+                        ItemList.CurrentCell = ItemList.Rows[lastRowIndex].Cells[2];
+                        ItemList.BeginEdit(true);
+                    }
+                }
+                e.Handled = true;
+            }
+
         }
         /*public void DeductQuantities(List<CreditItem> items)
         {
@@ -152,7 +197,17 @@ namespace SSA_B_Canteen
                             {
                                 lblProductName.Text = reader["name"].ToString();
                                 lblProductPrice.Text = reader["price"].ToString();
-                                txtBoxQuantity.Focus();
+                                int qty = 1; // Always 1 for scan
+                                decimal price = decimal.TryParse(lblProductPrice.Text, out var p) ? p : 0;
+                                decimal total = price * qty;
+                                lblItemTotal.Text = total.ToString("0.00");
+
+                                // Always add a new row with quantity 1
+                                ItemList.Rows.Add(barcode, lblProductName.Text, qty, price, total);
+                                UpdateFinalTotal();
+
+                                txtBoxBarcode.Text = "";
+                                txtBoxQuantity.Text = ""; // Clear quantity for next input
                             }
                             else
                             {
@@ -161,8 +216,11 @@ namespace SSA_B_Canteen
                         }
                     }
                 }
+                e.Handled = true;
             }
         }
+
+
         private void txtBoxQuantity_TextChanged(object sender, EventArgs e)
         {
             if (decimal.TryParse(lblProductPrice.Text, out var price))
@@ -183,9 +241,25 @@ namespace SSA_B_Canteen
             {
                 int qty = GetEffectiveQuantity();
                 decimal price = decimal.TryParse(lblProductPrice.Text, out var p) ? p : 0;
-                decimal total = price * qty;
-                ItemList.Rows.Add(txtBoxBarcode.Text, lblProductName.Text, qty, price, total);
-                UpdateFinalTotal();
+                decimal total = price * (qty + 1); // merged quantity: 1 (default) + new quantity
+
+                // Add a new row for the same product with the merged quantity
+                if (!string.IsNullOrWhiteSpace(lblProductName.Text) && !string.IsNullOrWhiteSpace(lblProductPrice.Text))
+                {
+                    // Find the last scanned barcode (from the last row)
+                    string lastBarcode = "";
+                    if (ItemList.Rows.Count > 0 && !ItemList.Rows[ItemList.Rows.Count - 1].IsNewRow)
+                    {
+                        lastBarcode = ItemList.Rows[ItemList.Rows.Count - 1].Cells[0].Value?.ToString();
+                    }
+                    // Use the last scanned barcode if available
+                    if (!string.IsNullOrEmpty(lastBarcode))
+                    {
+                        ItemList.Rows.Add(lastBarcode, lblProductName.Text, qty + 1, price, total);
+                        UpdateFinalTotal();
+                    }
+                }
+
                 txtBoxBarcode.Text = "";
                 lblProductName.Text = "";
                 lblProductPrice.Text = "";
@@ -194,6 +268,8 @@ namespace SSA_B_Canteen
                 txtBoxBarcode.Focus();
             }
         }
+
+
 
 
         private void UpdateFinalTotal()
@@ -442,7 +518,30 @@ namespace SSA_B_Canteen
             ItemList.Rows.Clear();
             UpdateFinalTotal();
             pnlCredit.Visible = false;
-        } 
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                using (var conn = new MySqlConnection(connstring))
+                {
+                    conn.Open();
+                    using (var cmd = conn.CreateCommand())
+                    {
+                        cmd.CommandText = "UPDATE accounts SET status = 'inactive' WHERE employee_id = @id";
+                        cmd.Parameters.AddWithValue("@id", _employeeId);
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error logging out: " + ex.Message);
+            }
+            Application.Exit();
+        }
+
     }
 }
 

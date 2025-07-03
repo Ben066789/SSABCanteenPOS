@@ -46,13 +46,13 @@
             total = new Label();
             lblChange = new Label();
             txtBoxCash = new TextBox();
+            btnLogout = new CustomControls.RJControls.RJButton();
             mainPanel = new TableLayoutPanel();
             cancelCredit = new CustomControls.RJControls.RJButton();
             okCredit = new CustomControls.RJControls.RJButton();
             pnlCredit = new RoundedPanel();
-            nameSearch = new TextBox();
-            btnLogout = new CustomControls.RJControls.RJButton();
             label2 = new Label();
+            nameSearch = new TextBox();
             ((System.ComponentModel.ISupportInitialize)ItemList).BeginInit();
             pnlControls.SuspendLayout();
             mainPanel.SuspendLayout();
@@ -65,7 +65,6 @@
             ItemList.Dock = DockStyle.Fill;
             ItemList.Location = new Point(3, 3);
             ItemList.Name = "ItemList";
-            ItemList.ReadOnly = true;
             ItemList.RowHeadersVisible = false;
             ItemList.Size = new Size(696, 663);
             ItemList.TabIndex = 1;
@@ -78,9 +77,9 @@
             lblProductName.ForeColor = Color.Blue;
             lblProductName.Location = new Point(3, 74);
             lblProductName.Name = "lblProductName";
-            lblProductName.Size = new Size(187, 28);
+            lblProductName.Size = new Size(142, 28);
             lblProductName.TabIndex = 1;
-            lblProductName.Text = "productNameHere";
+            lblProductName.Text = "productName";
             // 
             // lblProductPrice
             // 
@@ -140,19 +139,19 @@
             pnlControls.Controls.Add(item, 0, 0);
             pnlControls.Controls.Add(txtBoxBarcode, 0, 1);
             pnlControls.Controls.Add(lblProductName, 0, 2);
+            pnlControls.Controls.Add(lblProductPrice, 0, 4);
             pnlControls.Controls.Add(lblItemTotal, 0, 8);
             pnlControls.Controls.Add(label8, 0, 11);
             pnlControls.Controls.Add(label1, 0, 7);
             pnlControls.Controls.Add(lblFinalTotal, 0, 10);
             pnlControls.Controls.Add(txtBoxQuantity, 0, 6);
             pnlControls.Controls.Add(label9, 0, 9);
-            pnlControls.Controls.Add(lblProductPrice, 0, 4);
-            pnlControls.Controls.Add(label4, 0, 3);
             pnlControls.Controls.Add(label5, 0, 5);
             pnlControls.Controls.Add(total, 0, 13);
             pnlControls.Controls.Add(lblChange, 0, 14);
             pnlControls.Controls.Add(txtBoxCash, 0, 12);
             pnlControls.Controls.Add(btnLogout, 0, 17);
+            pnlControls.Controls.Add(label4, 0, 3);
             pnlControls.Dock = DockStyle.Fill;
             pnlControls.Location = new Point(705, 3);
             pnlControls.Name = "pnlControls";
@@ -287,6 +286,25 @@
             txtBoxCash.Size = new Size(175, 29);
             txtBoxCash.TabIndex = 2;
             // 
+            // btnLogout
+            // 
+            btnLogout.BackColor = Color.MediumSlateBlue;
+            btnLogout.BackgroundColor = Color.MediumSlateBlue;
+            btnLogout.BorderColor = Color.PaleVioletRed;
+            btnLogout.BorderRadius = 10;
+            btnLogout.BorderSize = 0;
+            btnLogout.FlatAppearance.BorderSize = 0;
+            btnLogout.FlatStyle = FlatStyle.Flat;
+            btnLogout.ForeColor = Color.White;
+            btnLogout.Location = new Point(3, 632);
+            btnLogout.Name = "btnLogout";
+            btnLogout.Size = new Size(136, 28);
+            btnLogout.TabIndex = 3;
+            btnLogout.Text = "Logout";
+            btnLogout.TextColor = Color.White;
+            btnLogout.UseVisualStyleBackColor = false;
+            btnLogout.Click += btnLogout_Click;
+            // 
             // mainPanel
             // 
             mainPanel.ColumnCount = 2;
@@ -355,32 +373,6 @@
             pnlCredit.Size = new Size(502, 144);
             pnlCredit.TabIndex = 7;
             // 
-            // nameSearch
-            // 
-            nameSearch.Font = new Font("Segoe UI", 14F);
-            nameSearch.Location = new Point(24, 60);
-            nameSearch.Name = "nameSearch";
-            nameSearch.Size = new Size(453, 32);
-            nameSearch.TabIndex = 0;
-            // 
-            // btnLogout
-            // 
-            btnLogout.BackColor = Color.MediumSlateBlue;
-            btnLogout.BackgroundColor = Color.MediumSlateBlue;
-            btnLogout.BorderColor = Color.PaleVioletRed;
-            btnLogout.BorderRadius = 10;
-            btnLogout.BorderSize = 0;
-            btnLogout.FlatAppearance.BorderSize = 0;
-            btnLogout.FlatStyle = FlatStyle.Flat;
-            btnLogout.ForeColor = Color.White;
-            btnLogout.Location = new Point(3, 632);
-            btnLogout.Name = "btnLogout";
-            btnLogout.Size = new Size(136, 28);
-            btnLogout.TabIndex = 3;
-            btnLogout.Text = "Logout";
-            btnLogout.TextColor = Color.White;
-            btnLogout.UseVisualStyleBackColor = false;
-            // 
             // label2
             // 
             label2.AutoSize = true;
@@ -391,6 +383,14 @@
             label2.Size = new Size(83, 28);
             label2.TabIndex = 2;
             label2.Text = "Credit";
+            // 
+            // nameSearch
+            // 
+            nameSearch.Font = new Font("Segoe UI", 14F);
+            nameSearch.Location = new Point(24, 60);
+            nameSearch.Name = "nameSearch";
+            nameSearch.Size = new Size(453, 32);
+            nameSearch.TabIndex = 0;
             // 
             // Cashier
             // 

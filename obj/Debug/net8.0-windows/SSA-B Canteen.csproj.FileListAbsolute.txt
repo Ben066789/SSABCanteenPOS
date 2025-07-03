@@ -75,3 +75,5 @@ C:\Users\User\source\repos\SSA-B Canteen\bin\Debug\net8.0-windows\runtimes\win-x
 C:\Users\User\source\repos\SSA-B Canteen\bin\Debug\net8.0-windows\runtimes\win-x86\native\libSkiaSharp.dll
 C:\Users\User\source\repos\SSA-B Canteen\obj\Debug\net8.0-windows\SSA_B_Canteen.BrowseItems.resources
 C:\Users\User\source\repos\SSA-B Canteen\obj\Debug\net8.0-windows\SSA_B_Canteen.Restock.resources
+C:\Users\User\source\repos\SSA-B Canteen\bin\Debug\net8.0-windows\itextsharp.dll
+C:\Users\User\source\repos\SSA-B Canteen\obj\Debug\net8.0-windows\SSA_B_Canteen.SalesReport.resources
