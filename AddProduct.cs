@@ -160,7 +160,7 @@ namespace SSA_B_Canteen
                 }
             }
 
-            MessageBox.Show("Products added successfully.");
+            MessageBox.Show("Items added successfully.");
             ListProducts.Rows.Clear();
             clearTextFields();
         }

@@ -15,17 +15,23 @@ namespace SSA_B_Canteen
         private int _employeeId;
         public Cashier(int employeeId)
         {
-            _employeeId = employeeId;
-            InitializeComponent();
-            txtBoxBarcode.KeyDown += txtBoxBarcode_KeyDown;
-            txtBoxQuantity.TextChanged += txtBoxQuantity_TextChanged;
-            txtBoxQuantity.KeyDown += txtBoxQuantity_KeyDown;
-            txtBoxCash.TextChanged += txtBoxCash_TextChanged;
-            btnComplete.Click += btnComplete_Click;
-            txtBoxCash.KeyDown += txtBoxCash_KeyDown;
-            this.FormClosing += Cashier_FormClosing;
             this.KeyPreview = true;
             this.KeyDown += Cashier_KeyDown;
+            _employeeId = employeeId;
+            InitializeComponent();
+            SetProductLabelsVisible(false);
+
+            chkSMode.CheckedChanged += chkSMode_CheckedChanged;
+            chkSMode.Checked = true;
+
+
+            txtBoxBarcode.KeyDown += txtBoxBarcode_KeyDown;
+            //txtBoxQuantity.TextChanged += txtBoxQuantity_TextChanged;
+            //txtBoxQuantity.KeyDown += txtBoxQuantity_KeyDown;
+            txtBoxCash.TextChanged += txtBoxCash_TextChanged;
+            //btnComplete.Click += btnComplete_Click;
+            //txtBoxCash.KeyDown += txtBoxCash_KeyDown;
+            this.FormClosing += Cashier_FormClosing;
             this.WindowState = FormWindowState.Maximized;
             this.FormBorderStyle = FormBorderStyle.None;
             this.Bounds = Screen.PrimaryScreen.Bounds;
@@ -40,12 +46,31 @@ namespace SSA_B_Canteen
             ItemList.Columns.Add("Price", "Price");
             ItemList.Columns.Add("Total", "Total");
 
+            var deleteButtonColumn = new DataGridViewButtonColumn();
+            deleteButtonColumn.Name = "Delete";
+            deleteButtonColumn.HeaderText = "Delete";
+            deleteButtonColumn.Text = "Delete";
+            deleteButtonColumn.UseColumnTextForButtonValue = true;
+            deleteButtonColumn.Width = 80; // Optional: set width
+            ItemList.Columns.Add(deleteButtonColumn);
+            ItemList.CellClick += ItemList_CellClick;
+
             okCredit.Click += okCredit_Click;
+            ItemList.AllowUserToAddRows = false;
 
             txtBoxBarcode.Focus();
             tableStyle();
             LoadEmployeeNames();
+            btn10.Click += CashShortcutButton_Click;
+            btn20.Click += CashShortcutButton_Click;
+            btn50.Click += CashShortcutButton_Click;
+            btn100.Click += CashShortcutButton_Click;
+            btn200.Click += CashShortcutButton_Click;
+            btn500.Click += CashShortcutButton_Click;
+            btn1000.Click += CashShortcutButton_Click;
+            chkSMode.CheckedChanged += chkSMode_CheckedChanged;
         }
+
         private void LoadEmployeeNames()
         {
             nameToId.Clear();
@@ -84,7 +109,53 @@ namespace SSA_B_Canteen
             // Focus back to the barcode textbox
             txtBoxBarcode.Focus();
         }
+        private void ItemList_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // Check if the click is on the Delete button column and not on the header row
+            if (e.RowIndex >= 0 && e.ColumnIndex == ItemList.Columns["Delete"].Index)
+            {
+                // Optionally confirm deletion
+                var result = MessageBox.Show("Delete this item?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
+                {
+                    ItemList.Rows.RemoveAt(e.RowIndex);
+                    UpdateFinalTotal(); // Recalculate totals if needed
+                    txtBoxBarcode.Focus(); // Set focus back to the barcode textbox
+                }
+            }
+        }
+        private void chkSMode_CheckedChanged(object sender, EventArgs e)
+        {
+            bool sMode = chkSMode.Checked;
 
+            // Always detach first to avoid multiple attachments
+            txtBoxCash.KeyDown -= txtBoxCash_KeyDown;
+
+            // Enable/disable shortcut buttons
+            btn10.Enabled = sMode;
+            btn20.Enabled = sMode;
+            btn50.Enabled = sMode;
+            btn100.Enabled = sMode;
+            btn200.Enabled = sMode;
+            btn500.Enabled = sMode;
+            btn1000.Enabled = sMode;
+
+            // Attach only if checked
+            if (sMode)
+            {
+                txtBoxCash.KeyDown += txtBoxCash_KeyDown;
+            }
+        }
+
+
+        private void SetProductLabelsVisible(bool visible)
+        {
+            lblProductName.Visible = visible;
+            lblProductPrice.Visible = visible;
+            lblItemTotal.Visible = visible;
+            lblFinalTotal.Visible = visible;
+            lblChange.Visible = visible;
+        }
         /*public class CreditItem
         {
             public int ItemId { get; set; }
@@ -95,6 +166,16 @@ namespace SSA_B_Canteen
         }*/
         private void Cashier_KeyDown(object sender, KeyEventArgs e)
         {
+            if (e.KeyCode == Keys.F2)
+            {
+                txtBoxBarcode.Focus();
+                e.Handled = true;
+            }
+            else if (e.KeyCode == Keys.Add && e.Modifiers == Keys.None)
+            {
+                txtBoxCash.Focus();
+                e.Handled = true;
+            }
             if (e.KeyCode == Keys.F1)
             {
                 bool hasItems = false;
@@ -164,12 +245,12 @@ namespace SSA_B_Canteen
                 }
             }
         }*/
-        private int GetEffectiveQuantity()
+        /*private int GetEffectiveQuantity()
         {
             if (int.TryParse(txtBoxQuantity.Text, out int qty) && qty > 1)
                 return qty;
             return 1;
-        }
+        }*/
         private void Cashier_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (e.CloseReason == CloseReason.UserClosing)
@@ -183,7 +264,10 @@ namespace SSA_B_Canteen
         {
             if (e.KeyCode == Keys.Enter)
             {
-                string barcode = txtBoxBarcode.Text;
+                SetProductLabelsVisible(true);
+                // Only keep numeric characters in the barcode
+                string barcode = new string(txtBoxBarcode.Text.Where(char.IsDigit).ToArray());
+
                 using (var conn = new MySqlConnection(connstring))
                 {
                     conn.Open();
@@ -207,11 +291,11 @@ namespace SSA_B_Canteen
                                 UpdateFinalTotal();
 
                                 txtBoxBarcode.Text = "";
-                                txtBoxQuantity.Text = ""; // Clear quantity for next input
+                                //txtBoxQuantity.Text = ""; // Clear quantity for next input
                             }
                             else
                             {
-                                MessageBox.Show("Product not found.");
+                                MessageBox.Show("Item not found.");
                             }
                         }
                     }
@@ -221,7 +305,8 @@ namespace SSA_B_Canteen
         }
 
 
-        private void txtBoxQuantity_TextChanged(object sender, EventArgs e)
+
+        /*private void txtBoxQuantity_TextChanged(object sender, EventArgs e)
         {
             if (decimal.TryParse(lblProductPrice.Text, out var price))
             {
@@ -232,16 +317,16 @@ namespace SSA_B_Canteen
             {
                 lblItemTotal.Text = "0.00";
             }
-        }
+        }*/
 
 
-        private void txtBoxQuantity_KeyDown(object sender, KeyEventArgs e)
+        /*private void txtBoxQuantity_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
-                int qty = GetEffectiveQuantity();
+                //int qty = GetEffectiveQuantity();
                 decimal price = decimal.TryParse(lblProductPrice.Text, out var p) ? p : 0;
-                decimal total = price * (qty + 1); // merged quantity: 1 (default) + new quantity
+                //decimal total = price * (qty + 1); // merged quantity: 1 (default) + new quantity
 
                 // Add a new row for the same product with the merged quantity
                 if (!string.IsNullOrWhiteSpace(lblProductName.Text) && !string.IsNullOrWhiteSpace(lblProductPrice.Text))
@@ -267,7 +352,7 @@ namespace SSA_B_Canteen
                 lblItemTotal.Text = "";
                 txtBoxBarcode.Focus();
             }
-        }
+        }*/
 
 
 
@@ -275,12 +360,15 @@ namespace SSA_B_Canteen
         private void UpdateFinalTotal()
         {
             decimal sum = 0;
+            bool hasItems = false;
             foreach (DataGridViewRow row in ItemList.Rows)
             {
                 if (row.IsNewRow) continue;
                 sum += Convert.ToDecimal(row.Cells[4].Value);
+                hasItems = true;
             }
             lblFinalTotal.Text = sum.ToString("0.00");
+            SetProductLabelsVisible(hasItems);
         }
         private void txtBoxCash_TextChanged(object sender, EventArgs e)
         {
@@ -290,6 +378,49 @@ namespace SSA_B_Canteen
         }
         private void txtBoxCash_KeyDown(object sender, KeyEventArgs e)
         {
+            if (!chkSMode.Checked)
+                return;
+            int addValue = 0;
+            bool handled = false;
+
+            // Map keys to values
+            switch (e.KeyCode)
+            {
+                case Keys.Insert: addValue = 10; handled = true; break;
+                case Keys.Home: addValue = 20; handled = true; break;    
+                case Keys.PageUp: addValue = 50; handled = true; break;
+                case Keys.Delete: addValue = 100; handled = true; break;
+                case Keys.End: addValue = 200; handled = true; break;    
+                case Keys.PageDown: addValue = 500; handled = true; break;
+                case Keys.Up: addValue = 1000; handled = true; break;
+                default:
+                    // Handle single digit keys (NumPad and top row)
+                    if (e.KeyCode >= Keys.D0 && e.KeyCode <= Keys.D9)
+                    {
+                        addValue = e.KeyCode - Keys.D0;
+                        handled = true;
+                    }
+                    else if (e.KeyCode >= Keys.NumPad0 && e.KeyCode <= Keys.NumPad9)
+                    {
+                        addValue = e.KeyCode - Keys.NumPad0;
+                        handled = true;
+                    }
+                    break;
+            }
+
+
+            if (handled)
+            {
+                int current = 0;
+                int.TryParse(txtBoxCash.Text, out current);
+                txtBoxCash.Text = (current + addValue).ToString();
+                txtBoxCash.SelectionStart = txtBoxCash.Text.Length;
+                e.SuppressKeyPress = true;
+                e.Handled = true;
+                return; // Prevent further processing
+            }
+
+            // Existing Enter key logic follows...
             if (e.KeyCode == Keys.Enter)
             {
                 if (ItemList.Rows.Count == 0 || (ItemList.Rows.Count == 1 && ItemList.Rows[0].IsNewRow))
@@ -365,8 +496,11 @@ namespace SSA_B_Canteen
                 ItemList.Rows.Clear();
                 UpdateFinalTotal();
                 lblChange.Text = "";
+                txtBoxCash.Text = "";
+                txtBoxBarcode.Focus();
             }
         }
+
         private void btnComplete_Click(object sender, EventArgs e)
         {
             using (var conn = new MySqlConnection(connstring))
@@ -540,6 +674,29 @@ namespace SSA_B_Canteen
                 MessageBox.Show("Error logging out: " + ex.Message);
             }
             Application.Exit();
+        }
+
+        private void btnBrowseItems_Click(object sender, EventArgs e)
+        {
+            var BrowseItems = new BrowseItems();
+            BrowseItems.Show();
+        }
+
+
+        private void CashShortcutButton_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Debug.WriteLine("CashShortcutButton_Click fired");
+            if (sender is Button btn)
+            {
+                int addValue = 0;
+                if (int.TryParse(btn.Text, out addValue))
+                {
+                    int current = 0;
+                    int.TryParse(txtBoxCash.Text, out current);
+                    txtBoxCash.Text = (current + addValue).ToString();
+                    txtBoxCash.SelectionStart = txtBoxCash.Text.Length;
+                }
+            }
         }
 
     }

@@ -1,0 +1,79 @@
+C:\Users\User\source\repos\SSA-B Canteen\bin\Release\net8.0-windows\SSA-B Canteen.exe
+C:\Users\User\source\repos\SSA-B Canteen\bin\Release\net8.0-windows\SSA-B Canteen.deps.json
+C:\Users\User\source\repos\SSA-B Canteen\bin\Release\net8.0-windows\SSA-B Canteen.runtimeconfig.json
+C:\Users\User\source\repos\SSA-B Canteen\bin\Release\net8.0-windows\SSA-B Canteen.dll
+C:\Users\User\source\repos\SSA-B Canteen\bin\Release\net8.0-windows\SSA-B Canteen.pdb
+C:\Users\User\source\repos\SSA-B Canteen\bin\Release\net8.0-windows\BouncyCastle.Cryptography.dll
+C:\Users\User\source\repos\SSA-B Canteen\bin\Release\net8.0-windows\Google.Protobuf.dll
+C:\Users\User\source\repos\SSA-B Canteen\bin\Release\net8.0-windows\HarfBuzzSharp.dll
+C:\Users\User\source\repos\SSA-B Canteen\bin\Release\net8.0-windows\itextsharp.dll
+C:\Users\User\source\repos\SSA-B Canteen\bin\Release\net8.0-windows\K4os.Compression.LZ4.dll
+C:\Users\User\source\repos\SSA-B Canteen\bin\Release\net8.0-windows\K4os.Compression.LZ4.Streams.dll
+C:\Users\User\source\repos\SSA-B Canteen\bin\Release\net8.0-windows\K4os.Hash.xxHash.dll
+C:\Users\User\source\repos\SSA-B Canteen\bin\Release\net8.0-windows\MySql.Data.dll
+C:\Users\User\source\repos\SSA-B Canteen\bin\Release\net8.0-windows\OpenTK.dll
+C:\Users\User\source\repos\SSA-B Canteen\bin\Release\net8.0-windows\OpenTK.GLControl.dll
+C:\Users\User\source\repos\SSA-B Canteen\bin\Release\net8.0-windows\ScottPlot.dll
+C:\Users\User\source\repos\SSA-B Canteen\bin\Release\net8.0-windows\ScottPlot.WinForms.dll
+C:\Users\User\source\repos\SSA-B Canteen\bin\Release\net8.0-windows\SkiaSharp.dll
+C:\Users\User\source\repos\SSA-B Canteen\bin\Release\net8.0-windows\SkiaSharp.HarfBuzz.dll
+C:\Users\User\source\repos\SSA-B Canteen\bin\Release\net8.0-windows\SkiaSharp.Views.Desktop.Common.dll
+C:\Users\User\source\repos\SSA-B Canteen\bin\Release\net8.0-windows\SkiaSharp.Views.WindowsForms.dll
+C:\Users\User\source\repos\SSA-B Canteen\bin\Release\net8.0-windows\System.IO.Pipelines.dll
+C:\Users\User\source\repos\SSA-B Canteen\bin\Release\net8.0-windows\System.Text.Encodings.Web.dll
+C:\Users\User\source\repos\SSA-B Canteen\bin\Release\net8.0-windows\System.Text.Json.dll
+C:\Users\User\source\repos\SSA-B Canteen\bin\Release\net8.0-windows\ZstdSharp.dll
+C:\Users\User\source\repos\SSA-B Canteen\bin\Release\net8.0-windows\zxing.dll
+C:\Users\User\source\repos\SSA-B Canteen\bin\Release\net8.0-windows\runtimes\linux-arm\native\libHarfBuzzSharp.so
+C:\Users\User\source\repos\SSA-B Canteen\bin\Release\net8.0-windows\runtimes\linux-arm64\native\libHarfBuzzSharp.so
+C:\Users\User\source\repos\SSA-B Canteen\bin\Release\net8.0-windows\runtimes\linux-musl-x64\native\libHarfBuzzSharp.so
+C:\Users\User\source\repos\SSA-B Canteen\bin\Release\net8.0-windows\runtimes\linux-x64\native\libHarfBuzzSharp.so
+C:\Users\User\source\repos\SSA-B Canteen\bin\Release\net8.0-windows\runtimes\osx\native\libHarfBuzzSharp.dylib
+C:\Users\User\source\repos\SSA-B Canteen\bin\Release\net8.0-windows\runtimes\win-arm64\native\libHarfBuzzSharp.dll
+C:\Users\User\source\repos\SSA-B Canteen\bin\Release\net8.0-windows\runtimes\win-x64\native\libHarfBuzzSharp.dll
+C:\Users\User\source\repos\SSA-B Canteen\bin\Release\net8.0-windows\runtimes\win-x86\native\libHarfBuzzSharp.dll
+C:\Users\User\source\repos\SSA-B Canteen\bin\Release\net8.0-windows\runtimes\win-x64\native\comerr64.dll
+C:\Users\User\source\repos\SSA-B Canteen\bin\Release\net8.0-windows\runtimes\win-x64\native\gssapi64.dll
+C:\Users\User\source\repos\SSA-B Canteen\bin\Release\net8.0-windows\runtimes\win-x64\native\k5sprt64.dll
+C:\Users\User\source\repos\SSA-B Canteen\bin\Release\net8.0-windows\runtimes\win-x64\native\krb5_64.dll
+C:\Users\User\source\repos\SSA-B Canteen\bin\Release\net8.0-windows\runtimes\win-x64\native\krbcc64.dll
+C:\Users\User\source\repos\SSA-B Canteen\bin\Release\net8.0-windows\runtimes\linux-arm\native\libSkiaSharp.so
+C:\Users\User\source\repos\SSA-B Canteen\bin\Release\net8.0-windows\runtimes\linux-arm64\native\libSkiaSharp.so
+C:\Users\User\source\repos\SSA-B Canteen\bin\Release\net8.0-windows\runtimes\linux-musl-x64\native\libSkiaSharp.so
+C:\Users\User\source\repos\SSA-B Canteen\bin\Release\net8.0-windows\runtimes\linux-x64\native\libSkiaSharp.so
+C:\Users\User\source\repos\SSA-B Canteen\bin\Release\net8.0-windows\runtimes\osx\native\libSkiaSharp.dylib
+C:\Users\User\source\repos\SSA-B Canteen\bin\Release\net8.0-windows\runtimes\win-arm64\native\libSkiaSharp.dll
+C:\Users\User\source\repos\SSA-B Canteen\bin\Release\net8.0-windows\runtimes\win-x64\native\libSkiaSharp.dll
+C:\Users\User\source\repos\SSA-B Canteen\bin\Release\net8.0-windows\runtimes\win-x86\native\libSkiaSharp.dll
+C:\Users\User\source\repos\SSA-B Canteen\bin\Release\net8.0-windows\runtimes\browser\lib\net8.0\System.Text.Encodings.Web.dll
+C:\Users\User\source\repos\SSA-B Canteen\obj\Release\net8.0-windows\SSA-B Canteen.csproj.AssemblyReference.cache
+C:\Users\User\source\repos\SSA-B Canteen\obj\Release\net8.0-windows\SSA_B_Canteen.AccountManager.resources
+C:\Users\User\source\repos\SSA-B Canteen\obj\Release\net8.0-windows\SSA_B_Canteen.AddProduct.resources
+C:\Users\User\source\repos\SSA-B Canteen\obj\Release\net8.0-windows\SSA_B_Canteen.AdminDashboard.resources
+C:\Users\User\source\repos\SSA-B Canteen\obj\Release\net8.0-windows\SSA_B_Canteen.BrowseItems.resources
+C:\Users\User\source\repos\SSA-B Canteen\obj\Release\net8.0-windows\SSA_B_Canteen.Cashier.resources
+C:\Users\User\source\repos\SSA-B Canteen\obj\Release\net8.0-windows\SSA_B_Canteen.Credit.resources
+C:\Users\User\source\repos\SSA-B Canteen\obj\Release\net8.0-windows\CustomControls.Test.FormButton.resources
+C:\Users\User\source\repos\SSA-B Canteen\obj\Release\net8.0-windows\CustomControls.Test.FormComboBox.resources
+C:\Users\User\source\repos\SSA-B Canteen\obj\Release\net8.0-windows\CustomControls.Testing.FormDatePicker.resources
+C:\Users\User\source\repos\SSA-B Canteen\obj\Release\net8.0-windows\CustomControls.Testing.FormMiniatura.resources
+C:\Users\User\source\repos\SSA-B Canteen\obj\Release\net8.0-windows\CustomControls.Testing.FormRadioButton.resources
+C:\Users\User\source\repos\SSA-B Canteen\obj\Release\net8.0-windows\CustomControls.FormTextBox.resources
+C:\Users\User\source\repos\SSA-B Canteen\obj\Release\net8.0-windows\CustomControls.Testing.FormToggleButton.resources
+C:\Users\User\source\repos\SSA-B Canteen\obj\Release\net8.0-windows\SSA_B_Canteen.Admin.Login.resources
+C:\Users\User\source\repos\SSA-B Canteen\obj\Release\net8.0-windows\SSA_B_Canteen.Properties.Resources.resources
+C:\Users\User\source\repos\SSA-B Canteen\obj\Release\net8.0-windows\SSA_B_Canteen.Restock.resources
+C:\Users\User\source\repos\SSA-B Canteen\obj\Release\net8.0-windows\CustomControls.RJControls.RJTextBox.resources
+C:\Users\User\source\repos\SSA-B Canteen\obj\Release\net8.0-windows\SSA_B_Canteen.SalesReport.resources
+C:\Users\User\source\repos\SSA-B Canteen\obj\Release\net8.0-windows\SSA-B Canteen.csproj.GenerateResource.cache
+C:\Users\User\source\repos\SSA-B Canteen\obj\Release\net8.0-windows\SSA-B Canteen.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\source\repos\SSA-B Canteen\obj\Release\net8.0-windows\SSA-B Canteen.AssemblyInfoInputs.cache
+C:\Users\User\source\repos\SSA-B Canteen\obj\Release\net8.0-windows\SSA-B Canteen.AssemblyInfo.cs
+C:\Users\User\source\repos\SSA-B Canteen\obj\Release\net8.0-windows\SSA-B Canteen.csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\SSA-B Canteen\obj\Release\net8.0-windows\SSA-B Canteen.sourcelink.json
+C:\Users\User\source\repos\SSA-B Canteen\obj\Release\net8.0-windows\SSA-B Ca.9A8D5680.Up2Date
+C:\Users\User\source\repos\SSA-B Canteen\obj\Release\net8.0-windows\SSA-B Canteen.dll
+C:\Users\User\source\repos\SSA-B Canteen\obj\Release\net8.0-windows\refint\SSA-B Canteen.dll
+C:\Users\User\source\repos\SSA-B Canteen\obj\Release\net8.0-windows\SSA-B Canteen.pdb
+C:\Users\User\source\repos\SSA-B Canteen\obj\Release\net8.0-windows\SSA-B Canteen.genruntimeconfig.cache
+C:\Users\User\source\repos\SSA-B Canteen\obj\Release\net8.0-windows\ref\SSA-B Canteen.dll

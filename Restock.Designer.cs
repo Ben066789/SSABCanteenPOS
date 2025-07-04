@@ -282,7 +282,7 @@
             Controls.Add(lblBrowse);
             Controls.Add(roundedPanelGrad1);
             Name = "Restock";
-            Text = "Form1";
+            Text = "Restock";
             ((System.ComponentModel.ISupportInitialize)dgvToConfirm).EndInit();
             ((System.ComponentModel.ISupportInitialize)dgvItems).EndInit();
             roundedPanelGrad1.ResumeLayout(false);

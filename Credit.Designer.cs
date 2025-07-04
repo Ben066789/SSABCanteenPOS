@@ -67,7 +67,7 @@
             // searchBar
             // 
             searchBar.Font = new Font("Segoe UI", 12F);
-            searchBar.Location = new Point(582, 22);
+            searchBar.Location = new Point(582, 25);
             searchBar.Name = "searchBar";
             searchBar.Size = new Size(290, 29);
             searchBar.TabIndex = 12;

@@ -72,7 +72,7 @@
             txtPassword.Multiline = false;
             txtPassword.Name = "txtPassword";
             txtPassword.Padding = new Padding(10, 7, 10, 7);
-            txtPassword.PasswordChar = false;
+            txtPassword.PasswordChar = true;
             txtPassword.PlaceholderColor = Color.DarkGray;
             txtPassword.PlaceholderText = "Password";
             txtPassword.Size = new Size(250, 31);
@@ -119,7 +119,7 @@
             Controls.Add(txtUsername);
             Controls.Add(pictureBox1);
             Name = "Login";
-            Text = "Form1";
+            Text = "Login";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }

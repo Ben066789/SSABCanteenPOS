@@ -197,9 +197,9 @@
             label2.ForeColor = Color.DodgerBlue;
             label2.Location = new Point(15, 14);
             label2.Name = "label2";
-            label2.Size = new Size(168, 28);
+            label2.Size = new Size(121, 28);
             label2.TabIndex = 10;
-            label2.Text = "Add Products";
+            label2.Text = "Add Item";
             // 
             // label5
             // 
@@ -323,12 +323,13 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            AutoSizeMode = AutoSizeMode.GrowAndShrink;
             ClientSize = new Size(1013, 470);
             Controls.Add(btnConfirm);
             Controls.Add(ListProducts);
             Controls.Add(panel1);
             Name = "AddProduct";
-            Text = "Add Products";
+            Text = "Item Entry";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)ListProducts).EndInit();

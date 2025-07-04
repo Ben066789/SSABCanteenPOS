@@ -67,10 +67,10 @@
             // 
             // btnUpdate
             // 
-            btnUpdate.BackColor = Color.MediumSlateBlue;
-            btnUpdate.BackgroundColor = Color.MediumSlateBlue;
+            btnUpdate.BackColor = Color.DodgerBlue;
+            btnUpdate.BackgroundColor = Color.DodgerBlue;
             btnUpdate.BorderColor = Color.PaleVioletRed;
-            btnUpdate.BorderRadius = 0;
+            btnUpdate.BorderRadius = 5;
             btnUpdate.BorderSize = 0;
             btnUpdate.FlatAppearance.BorderSize = 0;
             btnUpdate.FlatStyle = FlatStyle.Flat;
@@ -79,26 +79,26 @@
             btnUpdate.Name = "btnUpdate";
             btnUpdate.Size = new Size(150, 29);
             btnUpdate.TabIndex = 3;
-            btnUpdate.Text = "rjButton1";
+            btnUpdate.Text = "Update";
             btnUpdate.TextColor = Color.White;
             btnUpdate.UseVisualStyleBackColor = false;
             btnUpdate.Click += btnUpdate_Click;
             // 
             // btnShowUpdated
             // 
-            btnShowUpdated.BackColor = Color.MediumSlateBlue;
-            btnShowUpdated.BackgroundColor = Color.MediumSlateBlue;
+            btnShowUpdated.BackColor = Color.DodgerBlue;
+            btnShowUpdated.BackgroundColor = Color.DodgerBlue;
             btnShowUpdated.BorderColor = Color.PaleVioletRed;
-            btnShowUpdated.BorderRadius = 0;
+            btnShowUpdated.BorderRadius = 5;
             btnShowUpdated.BorderSize = 0;
             btnShowUpdated.FlatAppearance.BorderSize = 0;
             btnShowUpdated.FlatStyle = FlatStyle.Flat;
             btnShowUpdated.ForeColor = Color.White;
-            btnShowUpdated.Location = new Point(486, 11);
+            btnShowUpdated.Location = new Point(496, 11);
             btnShowUpdated.Name = "btnShowUpdated";
             btnShowUpdated.Size = new Size(150, 29);
             btnShowUpdated.TabIndex = 4;
-            btnShowUpdated.Text = "rjButton1";
+            btnShowUpdated.Text = "Show Updated";
             btnShowUpdated.TextColor = Color.White;
             btnShowUpdated.UseVisualStyleBackColor = false;
             btnShowUpdated.Click += btnShowUpdated_Click;
